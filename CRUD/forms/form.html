@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        #img1,#img2
+        {
+            filter: grayscale(100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div id="img1">
+            <img src="./images/img_1 (1).png" alt="image1">
+        </div>
+        <div id="img2">
+            <img src="./images/img_2.png" alt="image2">
+        </div>
+    </div>
+    <script type="text/javascript">
+            document.getElementById('img1').onmouseover=abc;
+            function abc()
+            {
+                document.getElementById('img1').style.filter='grayscale(0%)';
+            }
+    </script>
+</body>
+</html>

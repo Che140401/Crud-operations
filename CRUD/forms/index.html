@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../validation/bootstrap-5.2.2-dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+
+  <title>student data</title>
+  <style>
+    .needs-validation {
+      display: block;
+    }
+    .add_data
+    {
+      float: right;
+      margin: 21px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="add_data">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      data-bs-whatever="@mdo" onClick="add_show()">Add Data</button>    
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Data</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3 needs-validation" id="form" novalidate autocomplete="off">
+            <div>
+              <div class="col-md-4 mx-auto w-auto">
+                <label for="rollno_input" class="form-label">Roll No</label>
+                <input type="number " class="form-control" id="rollno_input" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-4  mx-auto w-auto">
+                <label for="name_input" class="form-label">Name</label>
+                <input type="text" class="form-control name_input" id="name_input" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-4  mx-auto w-auto">
+                <label for="eng_mark_input" class="form-label">Enter English Marks</label>
+                <input type="number" class="form-control" id="eng_mark_input" required>
+                <div class="invalid-feedback">
+                  Enter Valid Marks
+                </div>
+              </div>
+              <div class="col-md-4  mx-auto w-auto">
+                <label for="math_mark_input" class="form-label">Enter Maths Marks</label>
+                <input type="number" class="form-control" id="math_mark_input" required>
+                <div class="invalid-feedback">
+                  Enter Valid Marks
+                </div>
+              </div>
+              <div class="col-md-4  mx-auto w-auto">
+                <label for="science_mark_input" class="form-label">Enter Science Marks</label>
+                <input type="number" class="form-control" id="science_mark_input" required>
+                <div class="invalid-feedback">
+                  Enter Vlaid Marks
+                </div>
+              </div>  
+              <div class="col-md-4  mx-auto w-auto">
+                <button class="btn btn-primary" type="button" id="submit_btn" onclick="submit_form()">Submit form</button>
+                <button class="btn btn-primary" type="button" id="update_btn" onclick="update_form()">Update form</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="row g-3 needs-validation" novalidate>
+    <div class="table-responsive student-list">
+      <table class="table table-bordered table-info">
+        <thead>
+          <tr>
+            <th scope="col">Roll No</th>
+            <th scope="col">Name</th>
+            <th scope="col">English</th>
+            <th scope="col">Maths</th>
+            <th scope="col">Science</th>
+            <th scope="col">Result status</th>
+            <th scope="col">Percentage</th>
+            <th scope="col">Total</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+      </table>
+    </div>
+  </form>
+  <div id="warn" style="display: none;">
+    <h1>Error</h1>
+  </div>
+  <script src="./validation/bootstrap-5.2.2-dist/js/bootstrap.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+  <script src="./student_data.js"></script>
+  <script>
+    (() => {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
+</body>
+
+</html>

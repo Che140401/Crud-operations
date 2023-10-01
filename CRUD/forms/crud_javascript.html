@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud javascript</title>
+    <style>
+        .name_cls,
+        .english_cls,
+        .maths_cls,
+        .science_cls,
+        .roll_no_cls {
+            margin-bottom: 10px;
+        }
+
+        .form {
+            position: relative;
+        }
+
+        .name_input {
+            position: absolute;
+            left: 102px;
+        }
+
+        .maths_mark_input {
+            position: absolute;
+            left: 102px;
+        }
+        #user_msg {
+         display: none;
+         color: red;
+         border: 1px solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="" id="form">
+        <div>
+            <div class="roll_no_cls">
+                <label for="">Roll_No</label>
+                <input type="text" placeholder="Roll_No" id="roll_no_input">
+            </div>
+            <div class="name_cls">
+                <label for="">Name:</label>
+                <input type="text" placeholder="Add Name" id="name_input">
+            </div>
+            <div class="english_cls">
+                <label for="">English Marks:</label>
+                <input type="text" placeholder="Add english Marks" id="eng_mark_input">
+            </div>
+            <div class="maths_cls">
+                <label for="">Maths Marks:</label>
+                <input type="text" placeholder="Add maths marks" id="maths_mark_input">
+            </div>
+            <div class="science_cls">
+                <label for="">Science Marks:</label>
+                <input type="text" placeholder="Add science marks" id="science_mark_input">
+            </div>
+            <button>Reset</button>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <div class="student_list">
+        <table border="1" cellspacing="1" cellpadding="5" width="100%" id="student-list">
+            <thead>
+                <tr bgcolor="gray">
+                    <th color="white">Id</th>
+                    <th>Name</th>
+                    <th>English</th>
+                    <th>Maths</th>
+                    <th>Science</th>
+                    <th>Result Status</th>
+                    <th>Percentage</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+    </div>
+    <div id="user_msg">
+        <span>You have entered wrong information or invalid marks</span>
+     </div>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/default_javascript.js"></script>
+</body>
+
+</html>
